@@ -22,7 +22,7 @@ git clone https://github.com/FedericoDG/NestShopApi.git
 npm install
 ```
 
-3. Renombrar el archivo **.env.example** a **.env** y editar los valores
+3. Renombrar el archivo **.env.example** a **.env** y editar los valores de las variables de entorno
 
 4. Levantantar la base de datos
 
@@ -30,8 +30,14 @@ npm install
 docker-compose up -d
 ```
 
-5. Ejecutar el seed para cargar los datos de ejemplo
+5. Ejecutar el seed, para cargar los datos de ejemplo, haciendo una petición get al siguiente endpoint
 
 ```GET
 http://localhost:3000/api/seed
+```
+
+6. Correr la aplicación en modo de desarrollo
+
+```bash
+npm run start:dev
 ```
