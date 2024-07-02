@@ -13,7 +13,7 @@
 1. Clonar el repositorio
 
 ```bash
-git clone
+git clone https://github.com/FedericoDG/NestShopApi.git
 ```
 
 2. Instalar las dependencias del proyecto
@@ -30,4 +30,8 @@ npm install
 docker-compose up -d
 ```
 
-5.
+5. Ejecutar el seed para cargar los datos de ejemplo
+
+```GET
+http://localhost:3000/api/seed
+```
