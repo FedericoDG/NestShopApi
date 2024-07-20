@@ -14,6 +14,8 @@ import { diskStorage } from 'multer';
 import { fileNamer } from './helpers/file-namer.helper';
 import { Response } from 'express';
 import { ConfigService } from '@nestjs/config';
+import { Auth } from '../auth/decorators/auth.decorator';
+import { ValidRoles } from '../auth/interfaces/valid-roles.interface';
 
 @Controller('files')
 export class FilesController {
@@ -23,6 +25,7 @@ export class FilesController {
   ) {}
 
   @Post('product')
+  @Auth(ValidRoles.admin)
   @UseInterceptors(
     FileInterceptor('file', {
       fileFilter: fileFilter,

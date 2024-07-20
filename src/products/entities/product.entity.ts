@@ -1,3 +1,4 @@
+import { User } from 'src/auth/entities/user.entity';
 import { ProductImage } from './product-image.entity';
 import {
   BeforeInsert,
@@ -5,6 +6,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -53,6 +55,9 @@ export class Product {
     eager: true, // carga todas las relaciones
   })
   images?: ProductImage[];
+
+  @ManyToOne(() => User, (user) => user.product, { eager: true })
+  user: User;
 
   @BeforeInsert()
   checkSlug() {
